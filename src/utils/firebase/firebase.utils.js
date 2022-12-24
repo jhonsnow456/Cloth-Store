@@ -15,12 +15,12 @@ const env = process.env;
 
 const firebaseConfig = {
   /**
-    apiKey: "AIzaSyCySyNgPrz4r0bmAGg5pnO4uENP4kuwl1U",
-    authDomain: "shop-db-1637c.firebaseapp.com",
-    projectId: "shop-db-1637c",
-    storageBucket: "shop-db-1637c.appspot.com",
+    apiKey: "AIzaSyCySyNgPrz4r0bsAGg5pnO4uENP4kuwl1U",
+    authDomain: "shop-db-1635c.firebaseapp.com",
+    projectId: "shop-db-1635c",
+    storageBucket: "shop-db-1635c.appspot.com",
     messagingSenderId: "296911824794",
-    appId: "1:296911824794:web:e842345d5a906bfbcf3c23",
+    appId: "1:296911824794:web:e842345d5a906bfbcf3c05",
   */
 
   apiKey: env.REACT_APP_API_KEY,
