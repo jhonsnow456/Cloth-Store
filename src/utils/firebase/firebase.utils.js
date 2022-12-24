@@ -7,16 +7,28 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
+const env = process.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCySyNgPrz4r0bmAGg5pnO4uENP4kuwl1U",
-  authDomain: "shop-db-1637c.firebaseapp.com",
-  projectId: "shop-db-1637c",
-  storageBucket: "shop-db-1637c.appspot.com",
-  messagingSenderId: "296911824794",
-  appId: "1:296911824794:web:e842345d5a906bfbcf3c23",
+  /**
+    apiKey: "AIzaSyCySyNgPrz4r0bmAGg5pnO4uENP4kuwl1U",
+    authDomain: "shop-db-1637c.firebaseapp.com",
+    projectId: "shop-db-1637c",
+    storageBucket: "shop-db-1637c.appspot.com",
+    messagingSenderId: "296911824794",
+    appId: "1:296911824794:web:e842345d5a906bfbcf3c23",
+  */
+
+  apiKey: env.REACT_APP_API_KEY,
+  authDomain: env.REACT_APP_AUTH_DOMAIN,
+  projectId: env.REACT_APP_PROJECT_ID,
+  storageBucket: env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: env.REACT_APP_APP_ID,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -76,3 +88,6 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 };
 
 export const signOutUser = async () => signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
