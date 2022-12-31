@@ -7,7 +7,7 @@ export const addCartItem = (cartItems, productToAdd) => {
 
   if (existingCartItem) {
     return cartItems.map((cartItem) =>
-      cartItem.name === productToAdd.name
+      cartItem.id === productToAdd.id
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
         : cartItem
     );
@@ -18,7 +18,7 @@ export const addCartItem = (cartItems, productToAdd) => {
 
 export const CartContext = createContext({
   isCartOpen: false,
-  setIsOpen: () => {},
+  setIsCartOpen: () => {},
   cartItems: [],
   addItemToCart: () => {},
 });
