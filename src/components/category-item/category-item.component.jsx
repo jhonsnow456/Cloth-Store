@@ -1,23 +1,18 @@
-import "./category-item.styles.scss";
+import { CartItemContainer, ItemDetails } from "./cart-item.styles";
 
-const CategoryItem = ({ category }) => {
-  const { title, imageUrl } = category;
-
+const CartItem = ({ cartItem }) => {
+  const { name, imageUrl, price, quantity } = cartItem;
   return (
-    <div className="category-container">
-      <div
-        className="background-image"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      />
-
-      <div className="category-body-container">
-        <h2> {title} </h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
+    <CartItemContainer>
+      <img src={imageUrl} alt={`${name}`} />
+      <ItemDetails>
+        <span>{name}</span>
+        <span>
+          {quantity} x ${price}
+        </span>
+      </ItemDetails>
+    </CartItemContainer>
   );
 };
 
-export default CategoryItem;
+export default CartItem;
