@@ -4,7 +4,7 @@ Welcome to the Cloth Store repository! This project is a web-based application f
 
 ## About
 
-The Cloth Store web application provides users with an easy-to-use platform for browsing and purchasing clothing items online. The application is built using HTML, CSS, and JavaScript and is hosted on Netlify at [https://tranquil-truffle-e0624e.netlify.app/](https://tranquil-truffle-e0624e.netlify.app/). The application includes features such as a product catalog, shopping cart, and checkout system.
+The Cloth Store web application provides users with an easy-to-use platform for browsing and purchasing clothing items online. The application is built using ReactJs and is hosted on Netlify at [https://tranquil-truffle-e0624e.netlify.app/](https://tranquil-truffle-e0624e.netlify.app/). The application includes features such as a product catalog, shopping cart, and checkout system.
 
 ## Usage
 
