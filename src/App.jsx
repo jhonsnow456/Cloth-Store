@@ -6,6 +6,7 @@ import Authentication from "./routes/authentication/authentication";
 import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 
+// added a test commit
 const App = () => {
   return (
     <Routes>
