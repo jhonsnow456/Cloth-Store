@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+import { createAction } from "../utils/reducer/reducer.utils";
 
 export const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -62,6 +63,12 @@ const cartReducer = (state, action) => {
         ...state,
         ...payload
       }
+
+    case 'SET_IS_CART_OPEN':
+      return {
+        ...state,
+        isCartOpen: payload
+      }
     default:
       return new Error(`unhandled type of ${type} in cartReducer`)
   }
@@ -95,7 +102,12 @@ export const CartProvider = ({ children }) => {
       0
     );
 
-    dispatch({type: 'SET_CART_ITEMS', payload: {cartItems: newCartItems, cartCount: newCartCount, cartTotal: newCartTotal}});
+    dispatch(
+      createAction('SET_CART_ITEMS', {
+        cartItems: newCartItems, 
+        cartCount: newCartCount, 
+        cartTotal: newCartTotal
+      }))
   }
 
   const addItemToCart = (productToAdd) =>{
@@ -116,9 +128,13 @@ export const CartProvider = ({ children }) => {
     updateCartReducer(newCartItems);
   }
 
+  const setIsCartOpen = (bool) => {
+    dispatch(createAction('SET_IS_CART_OPEN', bool))
+  }
+
   const value = {
     isCartOpen,
-    setIsCartOpen: () => {},
+    setIsCartOpen,
     cartItems,
     addItemToCart,
     removeItemFromCart,
